@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterEmailActivity">
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:background="#F485AB"
+        android:layout_height="@dimen/m_toolbar_height">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+            android:contentDescription="Vishnu"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="106dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@+id/toolbarBackBtn"
+            android:text="Register" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray02"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarRl"
+        android:background="#F6D098"
+        android:padding="10dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profileTv"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_person_white"
+            android:background="@color/colorGray01"
+            android:layout_centerHorizontal="true"
+            app:shapeAppearanceOverlay="@style/ImageStyle_Circle"/>
+        <TextView
+            android:id="@+id/registerLabelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create a New Account"
+            android:textSize="15sp"
+            android:textColor="@color/Red01"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/profileTv"
+            android:layout_marginTop="10dp"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailTil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/registerLabelTv"
+                android:layout_marginTop="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                android:hint=" Email"
+                app:startIconDrawable="@drawable/ic_email_white"
+                app:boxCornerRadiusTopStart="8dp">
+                <EditText
+                    android:id="@+id/emailEt"
+                    android:background="#FFFFFF"
+                    android:layout_width="match_parent"
+                    android:inputType="textEmailAddress"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emailTil"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            android:hint=" Password"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic_lock_white"
+            app:boxCornerRadiusTopStart="8dp">
+            <EditText
+                android:id="@+id/passwordEt"
+                android:layout_width="match_parent"
+                android:background="#FFFFFF"
+                android:inputType="textPassword"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cPasswordTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/passwordTil"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            android:hint=" Confirm Password"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic_lock_white"
+            app:boxCornerRadiusTopStart="8dp">
+            <EditText
+                android:id="@+id/cPasswordEt"
+                android:layout_width="match_parent"
+                android:background="#FFFFFF"
+                android:inputType="textPassword"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/haveAccountTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cPasswordTil"
+            android:layout_marginTop="5dp"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:text="@string/already_have_account_login"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/m_button_height"
+            android:layout_alignParentBottom="true"
+            app:cornerRadius="8dp"
+            android:text="Register"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

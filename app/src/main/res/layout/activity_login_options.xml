@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginOptionsActivity">
+    <ImageButton
+       android:id="@+id/closeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close_gray"
+        android:contentDescription="vishnu"
+        android:background="@android:color/transparent"
+        android:padding="10dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="130dp"
+        android:contentDescription="Vishnu"
+        android:padding="90dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ImageView
+        android:layout_width="119dp"
+        android:layout_height="119dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="236dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="606dp"
+        android:layout_toEndOf="@+id/closeBtn"
+        android:adjustViewBounds="true"
+        android:src="@drawable/logoc" />
+
+    <ImageView
+        android:layout_width="224dp"
+        android:layout_height="233dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="167dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="329dp"
+        android:src="@drawable/room" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginEmailBtn"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="129dp"
+        android:minHeight="@dimen/m_button_height"
+        android:text="CONTINUE WITH EMAIL"
+        app:cornerRadius="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginPhoneBtn"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="194dp"
+        android:minHeight="@dimen/m_button_height"
+        android:text="CONTINUE WITH PHONE"
+        app:cornerRadius="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/loginGoogleBtn"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="253dp"
+        android:minHeight="@dimen/m_button_height"
+        android:text="CONTINUE WITH GOOGLE"
+        app:cornerRadius="8dp" />
+</RelativeLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "480539384154",
+    "project_id": "roomyrent-ce184",
+    "storage_bucket": "roomyrent-ce184.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480539384154:android:9344d3269b6df988c2bb63",
+        "android_client_info": {
+          "package_name": "com.example.roomyrent"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoymEIDyU91Ws_jBy7V-Kh_r5Px5F6l80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
