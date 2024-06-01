@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.activities;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -23,8 +23,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.PopupMenu;
 
-import com.bumptech.glide.util.Util;
+import com.example.roomyrent.R;
+import com.example.roomyrent.Utils;
+import com.example.roomyrent.adapters.AdapterImagesPicked;
 import com.example.roomyrent.databinding.ActivityAdCreateBinding;
+import com.example.roomyrent.models.ModelImagePicked;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -59,7 +62,7 @@ public class AdCreateActivity extends AppCompatActivity {
         progressDialog.setTitle("Please wait...");
         progressDialog.setCanceledOnTouchOutside(false);
         firebaseAuth = FirebaseAuth.getInstance();
-        ArrayAdapter<String> adapterCategories = new ArrayAdapter<>(this,R.layout.row_category_act,Utils.categories);
+        ArrayAdapter<String> adapterCategories = new ArrayAdapter<>(this, R.layout.row_category_act, Utils.categories);
         binding.categoriesEt.setAdapter(adapterCategories);
         ArrayAdapter<String> kitchen = new ArrayAdapter<>(this,R.layout.row_kitchen_act,Utils.kitchen);
         binding.kitchenEt.setAdapter(kitchen);
@@ -80,7 +83,7 @@ public class AdCreateActivity extends AppCompatActivity {
         binding.locationAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdCreateActivity.this,LocationPickerActivity.class);
+                Intent intent = new Intent(AdCreateActivity.this, LocationPickerActivity.class);
                 locationPickerActivityResultLauncher.launch(intent);
             }
         });

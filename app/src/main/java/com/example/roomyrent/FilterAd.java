@@ -1,7 +1,9 @@
 package com.example.roomyrent;
 
 import android.widget.Filter;
-import android.widget.Filterable;
+
+import com.example.roomyrent.adapters.AdapterAd;
+import com.example.roomyrent.models.ModelAd;
 
 import java.util.ArrayList;
 

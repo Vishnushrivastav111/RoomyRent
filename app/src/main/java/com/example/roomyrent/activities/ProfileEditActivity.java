@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.activities;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -6,14 +6,13 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.arch.core.internal.SafeIterableMap;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -23,8 +22,9 @@ import android.view.View;
 import android.widget.PopupMenu;
 
 import com.bumptech.glide.Glide;
+import com.example.roomyrent.R;
+import com.example.roomyrent.Utils;
 import com.example.roomyrent.databinding.ActivityProfileEditBinding;
-import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -39,7 +39,6 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.net.DatagramPacket;
 import java.util.HashMap;
 import java.util.Map;
 

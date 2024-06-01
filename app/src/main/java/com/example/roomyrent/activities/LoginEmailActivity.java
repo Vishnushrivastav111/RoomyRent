@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -8,6 +8,7 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 
+import com.example.roomyrent.Utils;
 import com.example.roomyrent.databinding.ActivityLoginEmailBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -26,11 +27,11 @@ public class LoginEmailActivity extends AppCompatActivity {
         progressDialog.setTitle("Please wait");
         progressDialog.setCanceledOnTouchOutside(false);
         binding.toolbarBackBtn.setOnClickListener(v -> onBackPressed());
-        binding.noAccountTv.setOnClickListener(v -> startActivity(new Intent(LoginEmailActivity.this,RegisterEmailActivity.class)));
+        binding.noAccountTv.setOnClickListener(v -> startActivity(new Intent(LoginEmailActivity.this, RegisterEmailActivity.class)));
         binding.forgotPasswordTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginEmailActivity.this,ForgotPasswordActivity.class));
+                startActivity(new Intent(LoginEmailActivity.this, ForgotPasswordActivity.class));
             }
         });
         binding.loginBtn.setOnClickListener(v -> validateData());
@@ -62,7 +63,7 @@ public class LoginEmailActivity extends AppCompatActivity {
                     Log.d(TAG,"onSuccess: Logged In...");
                     progressDialog.dismiss();
 
-                    startActivity(new Intent(LoginEmailActivity.this,MainActivity.class));
+                    startActivity(new Intent(LoginEmailActivity.this, MainActivity.class));
                     finishAffinity();
                 })
                 .addOnFailureListener(e -> {

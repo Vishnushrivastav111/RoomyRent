@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.fragments;
 
 import static android.view.LayoutInflater.*;
 
@@ -24,7 +24,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.roomyrent.R;
+import com.example.roomyrent.Utils;
+import com.example.roomyrent.activities.LocationPickerActivity;
+import com.example.roomyrent.adapters.AdapterAd;
+import com.example.roomyrent.adapters.AdapterCategory;
 import com.example.roomyrent.databinding.FragmentHomeBinding;
+import com.example.roomyrent.models.ModelAd;
+import com.example.roomyrent.models.ModelCategory;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -96,7 +103,7 @@ private String currentAddress = "";
         }
     });
     binding.locationCv.setOnClickListener(v -> {
-        Intent intent = new Intent(mContext,LocationPickerActivity.class);
+        Intent intent = new Intent(mContext, LocationPickerActivity.class);
         locationPickerActivityResult.launch(intent);
     });
     }
@@ -131,7 +138,7 @@ private String currentAddress = "";
     );
     private void loadCategories(){
            ArrayList<ModelCategory> categoryArrayList = new ArrayList<>();
-           ModelCategory modelCategoryAll = new ModelCategory("All",R.drawable.ic_category_all);
+           ModelCategory modelCategoryAll = new ModelCategory("All", R.drawable.ic_category_all);
            categoryArrayList.add(modelCategoryAll);
 
            for (int i =0;i<Utils.categories.length;i++){

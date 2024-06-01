@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -14,9 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
+import com.example.roomyrent.R;
+import com.example.roomyrent.Utils;
+import com.example.roomyrent.activities.ChangePasswordActivity;
+import com.example.roomyrent.activities.DeleteAccountActivity;
+import com.example.roomyrent.activities.MainActivity;
+import com.example.roomyrent.activities.ProfileEditActivity;
 import com.example.roomyrent.databinding.FragmentAccountBinding;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -62,20 +66,20 @@ public class AccountFragment extends Fragment {
             public void onClick(View v) {
                 firebaseAuth.signOut();
 
-                startActivity(new Intent(mContext,MainActivity.class));
+                startActivity(new Intent(mContext, MainActivity.class));
                 getActivity().finishAffinity();
             }
         });
         binding.editProfileCv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mContext,ProfileEditActivity.class));
+                startActivity(new Intent(mContext, ProfileEditActivity.class));
             }
         });
         binding.changePasswordCv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mContext,ChangePasswordActivity.class));
+                startActivity(new Intent(mContext, ChangePasswordActivity.class));
 
             }
         });
@@ -88,7 +92,7 @@ public class AccountFragment extends Fragment {
         binding.deleteAccountCv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mContext,DeleteAccountActivity.class));
+                startActivity(new Intent(mContext, DeleteAccountActivity.class));
                 getActivity().finishAffinity();
             }
         });

@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.roomyrent.Utils;
 import com.example.roomyrent.databinding.ActivityDeleteAccountBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -110,7 +111,7 @@ public class DeleteAccountActivity extends AppCompatActivity {
     private void startMainActivity(){
         Log.d(TAG,"startMainActivity: ");
 
-        startActivity(new Intent(this,MainActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
         finishAffinity();
     }
 }

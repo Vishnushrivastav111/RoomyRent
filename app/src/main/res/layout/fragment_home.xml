@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".HomeFragment">
+    tools:context=".fragments.HomeFragment">
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/locationCv"
         android:layout_width="match_parent"

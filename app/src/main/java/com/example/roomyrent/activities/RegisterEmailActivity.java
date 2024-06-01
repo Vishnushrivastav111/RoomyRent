@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 
+import com.example.roomyrent.Utils;
 import com.example.roomyrent.databinding.ActivityRegisterEmailBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -118,7 +119,7 @@ public class RegisterEmailActivity extends AppCompatActivity {
                     public void onSuccess(Void unused) {
                         Log.d(TAG,"onSuccess: Info saved...");
                         progressDialog.dismiss();
-                        startActivity(new Intent(RegisterEmailActivity.this,MainActivity.class));
+                        startActivity(new Intent(RegisterEmailActivity.this, MainActivity.class));
                         finishAffinity();
                     }
                 })

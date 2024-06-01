@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.adapters;
 
 import android.content.Context;
 import android.net.Uri;
@@ -13,7 +13,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.roomyrent.R;
 import com.example.roomyrent.databinding.RowImagesPickedBinding;
+import com.example.roomyrent.models.ModelImagePicked;
 
 import java.util.ArrayList;
 

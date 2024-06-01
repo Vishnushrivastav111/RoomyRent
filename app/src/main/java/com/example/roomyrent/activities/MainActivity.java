@@ -1,16 +1,21 @@
-package com.example.roomyrent;
+package com.example.roomyrent.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.example.roomyrent.databinding.ActivityMainBinding;
+import com.example.roomyrent.fragments.AccountFragment;
+import com.example.roomyrent.fragments.ChatsFragment;
+import com.example.roomyrent.fragments.HomeFragment;
+import com.example.roomyrent.fragments.MyAdsFragment;
+import com.example.roomyrent.R;
+import com.example.roomyrent.Utils;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId();
-                if (itemId==R.id.menu_home){
+                if (itemId== R.id.menu_home){
                     showHomeFragment();
                 return true;
               }
@@ -78,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         binding.sellFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,AdCreateActivity.class));
+                startActivity(new Intent(MainActivity.this, AdCreateActivity.class));
             }
         });
     }
@@ -113,6 +118,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
     private void startLoginOptions(){
-       startActivity(new Intent(this,LoginOptionsActivity.class));
+       startActivity(new Intent(this, LoginOptionsActivity.class));
     }
 }

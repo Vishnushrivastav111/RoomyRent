@@ -1,6 +1,7 @@
-package com.example.roomyrent;
+package com.example.roomyrent.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.roomyrent.FilterAd;
+import com.example.roomyrent.R;
+import com.example.roomyrent.Utils;
+import com.example.roomyrent.activities.AdDetailsActivity;
 import com.example.roomyrent.databinding.RowAdBinding;
+import com.example.roomyrent.models.ModelAd;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -24,7 +30,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class AdapterAd extends RecyclerView.Adapter<AdapterAd.HolderAd> implements Filterable {
     private RowAdBinding binding;
@@ -74,6 +79,14 @@ public class AdapterAd extends RecyclerView.Adapter<AdapterAd.HolderAd> implemen
         holder.conditionTv.setText(condition);
         holder.priceTv.setText(rent);
         holder.dateTv.setText(formattedDate);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, AdDetailsActivity.class);
+                intent.putExtra("adId",modelAd.getId());
+                context.startActivity(intent);
+            }
+        });
         holder.favBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

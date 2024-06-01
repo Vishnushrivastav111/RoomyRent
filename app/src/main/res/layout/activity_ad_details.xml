@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AdDetailsActivity">
+    <RelativeLayout
+        android:id="@+id/toolbarRl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/m_toolbar_height">
+
+        <ImageButton
+            android:id="@+id/toolbarBackBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:contentDescription="Vishnu"
+            android:padding="10dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/toolbarTitleTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ad Details"
+            android:layout_centerInParent="true"
+            style="@style/TextAppearance.MaterialComponents.Body1"/>
+        <ImageButton
+            android:id="@+id/toolbarDeleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/toolbarEditBtn"
+            android:src="@drawable/ic_delete"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:padding="10dp"/>
+
+
+        <ImageButton
+            android:id="@+id/toolbarEditBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            android:layout_toStartOf="@id/toolbarFavBtn"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:padding="10dp"/>
+            <ImageButton
+                android:id="@+id/toolbarFavBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_fav_no"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@android:color/transparent"
+                android:padding="10dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorGray02"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarRl"
+        android:layout_above="@+id/optionsLl">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/imageSliderVp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/priceSymbolTv"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_below="@+id/imageSliderVp"
+                android:layout_marginEnd="2dp"
+                android:text="@string/price_symbol"/>
+            <TextView
+                android:id="@+id/priceTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_below="@+id/imageSliderVp"
+                android:layout_toEndOf="@+id/priceSymbolTv"
+                android:text="00"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/conditionTv"
+                android:layout_below="@+id/imageSliderVp"
+                android:layout_centerHorizontal="true"
+                style="@style/TextAppearance.MaterialComponents.Overline"
+                android:text="Used"
+                android:layout_marginTop="4dp"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dateTv"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:text="dd/MM/yyyy"
+                android:layout_below="@+id/imageSliderVp"
+                android:layout_alignParentEnd="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/categoryLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/dateTv"
+                android:layout_marginTop="10dp"
+                android:text="Category"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/categoryTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="The Ad Category"
+                android:layout_below="@+id/categoryLabelTv"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/houseLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/categoryLabelTv"
+                android:layout_marginTop="10dp"
+                android:text="House No."/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/houseTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="House Number"
+                android:layout_below="@+id/houseLabelTv"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/floorLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/houseTv"
+                android:layout_marginTop="10dp"
+                android:text="Floor"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/floorTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="Floor"
+                android:layout_below="@+id/floorLabelTv"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/titleLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:text="Title"
+                android:layout_marginTop="4dp"
+                android:layout_below="@+id/floorTv"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/titleTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                tools:text="@tools:sample/lorem[5]"
+                android:layout_below="@+id/titleLabelTv"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/descriptionLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:text="Description"
+                android:layout_below="@+id/titleTv"
+                android:layout_marginTop="4dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/descriptionTv"
+                tools:text="@tools:sample/lorem[20]"
+                android:layout_below="@+id/descriptionLabelTv"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addressLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:text="Address"
+                android:layout_below="@+id/descriptionTv"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addressTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_below="@+id/addressLabelTv"
+                tools:text="@tools:sample/lorem[5]"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/receiptProfileLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:text="Seller Description"
+                android:layout_below="@+id/addressTv"
+                android:layout_marginTop="4dp"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/sellerProfileCv"
+                android:layout_below="@+id/receiptProfileLabelTv"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/sellerProfileIv"
+                        android:layout_marginEnd="10dp"
+                        app:shapeAppearanceOverlay="@style/ImageStyle_Circle"
+                        android:background="@color/colorGray01"
+                        android:src="@drawable/ic_person_white"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sellerNameTv"
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:text="Full Name"
+                        android:layout_toEndOf="@+id/sellerProfileIv"/>
+
+                    <TextView
+                        android:id="@+id/memberSinceLabelTv"
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sellerProfileIv"
+                        android:layout_marginStart="-75dp"
+                        android:layout_marginTop="-14dp"
+                        android:layout_toEndOf="@+id/sellerNameTv"
+                        android:text="Member Since" />
+
+                    <TextView
+                        android:id="@+id/memberSinceTv"
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sellerNameTv"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_toEndOf="@+id/memberSinceLabelTv"
+                        android:text="dd/MM/yyyy" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/nextIv"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_next_gray"/>
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/optionsLl"
+        android:layout_alignParentBottom="true"
+        android:padding="2dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/chatBtn"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/m_button_height"
+            android:text="Chat"
+            android:textSize="10sp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_chats_white"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/callBtn"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/m_button_height"
+            android:text="Call"
+            android:textSize="10sp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_call_white"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/smsBtn"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/m_button_height"
+            android:text="SMS"
+            android:textSize="10sp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_sms_white"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mapBtn"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:minHeight="@dimen/m_button_height"
+            android:text="Map"
+            android:textSize="10sp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_location_white"/>
+
+    </LinearLayout>
+
+    </RelativeLayout>

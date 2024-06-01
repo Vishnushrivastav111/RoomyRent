@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.roomyrent.databinding.FragmentMyAdsBinding;
+import com.example.roomyrent.fragments.MyAdsAdsFragment;
+import com.example.roomyrent.fragments.MyAdsFavFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class MyAdsFragment extends Fragment {
@@ -46,6 +48,7 @@ public class MyAdsFragment extends Fragment {
 
         fragmentManager = getChildFragmentManager();
         myTabsViewPagerAdapter = new MyTabsViewPagerAdapter(fragmentManager,getLifecycle());
+        binding.viewPager.setAdapter(myTabsViewPagerAdapter);
 
         binding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

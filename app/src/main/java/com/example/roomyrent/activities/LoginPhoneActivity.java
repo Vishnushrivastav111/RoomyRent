@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.example.roomyrent.Utils;
 import com.example.roomyrent.databinding.ActivityLoginPhoneBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -180,7 +181,7 @@ public class LoginPhoneActivity extends AppCompatActivity {
                         }
                         else {
                             Log.d(TAG,"onSuccess: Existing User,Logged In");
-                            startActivity(new Intent(LoginPhoneActivity.this,MainActivity.class));
+                            startActivity(new Intent(LoginPhoneActivity.this, MainActivity.class));
                             finishAffinity();
                         }
                     }

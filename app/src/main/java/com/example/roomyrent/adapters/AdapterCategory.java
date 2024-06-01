@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,7 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.roomyrent.RvListenerCategory;
 import com.example.roomyrent.databinding.RowCategoryBinding;
+import com.example.roomyrent.models.ModelCategory;
 import com.google.android.material.imageview.ShapeableImageView;
 import java.util.ArrayList;
 import java.util.Random;

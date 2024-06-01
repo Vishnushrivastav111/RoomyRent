@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.models;
 
 import android.net.Uri;
 

@@ -1,10 +1,12 @@
-package com.example.roomyrent;
+package com.example.roomyrent.activities;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.example.roomyrent.R;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -21,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent intent=new Intent(SplashActivity.this,LoginOptionsActivity.class);
+                    Intent intent=new Intent(SplashActivity.this, LoginOptionsActivity.class);
                     startActivity(intent);
                 }
             }

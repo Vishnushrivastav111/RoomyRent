@@ -1,4 +1,4 @@
-package com.example.roomyrent;
+package com.example.roomyrent.activities;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,8 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
+
+import com.example.roomyrent.Utils;
 import com.example.roomyrent.databinding.ActivityForgotPasswordBinding;
 import com.google.firebase.auth.FirebaseAuth;
 

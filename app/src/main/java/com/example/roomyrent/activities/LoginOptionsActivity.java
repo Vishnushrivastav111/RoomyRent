@@ -1,13 +1,13 @@
-package com.example.roomyrent;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
+package com.example.roomyrent.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.example.roomyrent.R;
+import com.example.roomyrent.Utils;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
 import com.example.roomyrent.databinding.ActivityLoginOptionsBinding;
@@ -46,7 +46,7 @@ public class LoginOptionsActivity extends AppCompatActivity {
         mgoogleSignInClient = GoogleSignIn.getClient(this, gso);
         binding.closeBtn.setOnClickListener(v -> onBackPressed());
         binding.loginEmailBtn.setOnClickListener(v -> startActivity(new Intent(LoginOptionsActivity.this, LoginEmailActivity.class)));
-        binding.loginPhoneBtn.setOnClickListener(v -> startActivity(new Intent(LoginOptionsActivity.this,LoginPhoneActivity.class)));
+        binding.loginPhoneBtn.setOnClickListener(v -> startActivity(new Intent(LoginOptionsActivity.this, LoginPhoneActivity.class)));
         binding.loginGoogleBtn.setOnClickListener(v -> beginGoogleLogin());
     }
     private void beginGoogleLogin(){
@@ -95,7 +95,7 @@ public class LoginOptionsActivity extends AppCompatActivity {
                     }
                     else {
                         Log.d(TAG,"onSuccess: Existing User, Logged In...");
-                        startActivity(new Intent(LoginOptionsActivity.this,MainActivity.class));
+                        startActivity(new Intent(LoginOptionsActivity.this, MainActivity.class));
                         finishAffinity();
                     }
                 })
@@ -105,7 +105,7 @@ public class LoginOptionsActivity extends AppCompatActivity {
         Log.d(TAG,"updateUserInfoDb");
         progressDialog.setMessage("Saving User Info");
         progressDialog.show();
-        long timestamp=Utils.getTimestamp();
+        long timestamp= Utils.getTimestamp();
         String registerUserEmail = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getEmail();
         String registerUserUId = firebaseAuth.getUid();
         String name = firebaseAuth.getCurrentUser().getDisplayName();
