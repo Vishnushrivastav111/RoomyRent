@@ -44,7 +44,7 @@ public class MyAdsFragment extends Fragment {
         super.onViewCreated(view,savedInstanceState);
 
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Ads"));
-        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Favorites"));
+        binding.tabLayout.addTab(binding.tabLayout.newTab().setText("Favourites"));
 
         fragmentManager = getChildFragmentManager();
         myTabsViewPagerAdapter = new MyTabsViewPagerAdapter(fragmentManager,getLifecycle());

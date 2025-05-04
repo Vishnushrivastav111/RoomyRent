@@ -88,14 +88,18 @@ private String currentAddress = "";
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            Log.d(TAG,"onTextChanged: Query: "+s);
             try {
                 String query = s.toString();
-                adapterAd.getFilter().filter(query);
-            }catch (Exception e){
-                Log.e(TAG,"onTextChanged: ",e);
+                if (adapterAd != null) {
+                    adapterAd.getFilter().filter(query);
+                } else {
+                    Log.w(TAG, "Adapter is not ready yet for filtering");
+                }
+            } catch (Exception e) {
+                Log.e(TAG, "onTextChanged: Exception occurred while filtering", e);
             }
         }
+
 
         @Override
         public void afterTextChanged(Editable s) {

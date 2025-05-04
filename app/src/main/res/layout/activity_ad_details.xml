@@ -83,7 +83,7 @@
                 style="@style/TextAppearance.MaterialComponents.Body1"
                 android:layout_below="@+id/imageSliderVp"
                 android:layout_marginEnd="2dp"
-                android:text="@string/price_symbol"/>
+                android:text="Rs."/>
             <TextView
                 android:id="@+id/priceTv"
                 android:layout_width="wrap_content"
@@ -112,7 +112,16 @@
                 android:text="dd/MM/yyyy"
                 android:layout_below="@+id/imageSliderVp"
                 android:layout_alignParentEnd="true"/>
-
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/conditionTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,6 +129,7 @@
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:layout_below="@+id/dateTv"
                 android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
                 android:text="Category"/>
 
             <TextView
@@ -128,14 +138,23 @@
                 android:id="@+id/categoryTv"
                 style="@style/TextAppearance.MaterialComponents.Body2"
                 android:text="The Ad Category"
+                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/categoryLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/categoryTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/houseLabelTv"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:layout_below="@+id/categoryLabelTv"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="24dp"
+                android:layout_centerHorizontal="true"
                 android:text="House No."/>
 
             <TextView
@@ -144,7 +163,14 @@
                 android:id="@+id/houseTv"
                 style="@style/TextAppearance.MaterialComponents.Body2"
                 android:text="House Number"
+                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/houseLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/houseTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -152,6 +178,7 @@
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:layout_below="@+id/houseTv"
                 android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
                 android:text="Floor"/>
 
             <TextView
@@ -160,22 +187,181 @@
                 android:id="@+id/floorTv"
                 style="@style/TextAppearance.MaterialComponents.Body2"
                 android:text="Floor"
+                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/floorLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/floorTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/kitchenLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/floorTv"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="Kitchen"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/kitchenTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="Kitchen"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/kitchenLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/kitchenTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sizeLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/kitchenTv"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="Size"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sizeTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="Room Size"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/sizeLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/sizeTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bathroomLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/sizeTv"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="Bathroom"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bathroomTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="Bathroom"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/bathroomLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/bathroomTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/wifiLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/bathroomTv"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="Wifi"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/wifiTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="Wifi"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/wifiLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/wifiTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/furnitureLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/wifiTv"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="Furniture"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/furnitureTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="Furniture"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/furnitureLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/furnitureTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lightBillLabelTv"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_below="@+id/furnitureTv"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:text="Light Bill"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lightBillTv"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:text="Light Bill"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/lightBillLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/lightBillTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/titleLabelTv"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:text="Title"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="4dp"
-                android:layout_below="@+id/floorTv"/>
+                android:layout_below="@+id/lightBillTv"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/titleTv"
                 style="@style/TextAppearance.MaterialComponents.Body2"
                 tools:text="@tools:sample/lorem[5]"
+                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/titleLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/titleTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -183,6 +369,7 @@
                 android:id="@+id/descriptionLabelTv"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:text="Description"
+                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/titleTv"
                 android:layout_marginTop="4dp"/>
             <TextView
@@ -190,7 +377,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/descriptionTv"
                 tools:text="@tools:sample/lorem[20]"
+                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/descriptionLabelTv"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/descriptionTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -198,15 +392,23 @@
                 android:id="@+id/addressLabelTv"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:text="Address"
+                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/descriptionTv"
                 android:layout_marginTop="10dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/addressTv"
+                android:layout_centerHorizontal="true"
                 style="@style/TextAppearance.MaterialComponents.Body2"
                 android:layout_below="@+id/addressLabelTv"
                 tools:text="@tools:sample/lorem[5]"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/addressTv"
+                android:layout_marginTop="4dp"
+                android:background="@color/colorGray02"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -214,6 +416,7 @@
                 android:id="@+id/receiptProfileLabelTv"
                 style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:text="Seller Description"
+                android:layout_centerHorizontal="true"
                 android:layout_below="@+id/addressTv"
                 android:layout_marginTop="4dp"/>
             <com.google.android.material.card.MaterialCardView
@@ -250,7 +453,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/sellerProfileIv"
-                        android:layout_marginStart="-75dp"
+                        android:layout_marginStart="-55dp"
                         android:layout_marginTop="-14dp"
                         android:layout_toEndOf="@+id/sellerNameTv"
                         android:text="Member Since" />
@@ -261,7 +464,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/sellerNameTv"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginStart="45dp"
                         android:layout_marginTop="6dp"
                         android:layout_toEndOf="@+id/memberSinceLabelTv"
                         android:text="dd/MM/yyyy" />

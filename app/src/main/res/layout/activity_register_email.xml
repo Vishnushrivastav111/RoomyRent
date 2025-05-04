@@ -65,11 +65,31 @@
             android:layout_below="@+id/profileTv"
             android:layout_marginTop="10dp"
             style="@style/TextAppearance.MaterialComponents.Subtitle1"/>
-            <com.google.android.material.textfield.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/registerLabelTv"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            android:hint=" Username"
+            app:startIconDrawable="@drawable/ic_person_gray"
+            app:boxCornerRadiusTopStart="8dp">
+            <EditText
+                android:id="@+id/usernameEt"
+                android:background="#FFFFFF"
+                android:layout_width="match_parent"
+                android:inputType="textPersonName"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/emailTil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/registerLabelTv"
+                android:layout_below="@+id/usernameTil"
                 android:layout_marginTop="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:boxCornerRadiusBottomEnd="8dp"
@@ -84,12 +104,32 @@
                     android:layout_width="match_parent"
                     android:inputType="textEmailAddress"
                     android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneTil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emailTil"
+            android:layout_marginTop="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            android:hint=" Mobile Number"
+            app:startIconDrawable="@drawable/ic_phone_white"
+            app:boxCornerRadiusTopStart="8dp">
+            <EditText
+                android:id="@+id/phoneEt"
+                android:background="#FFFFFF"
+                android:layout_width="match_parent"
+                android:inputType="phone"
+                android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordTil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/emailTil"
+            android:layout_below="@+id/phoneTil"
             android:layout_marginTop="10dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:boxCornerRadiusBottomEnd="8dp"

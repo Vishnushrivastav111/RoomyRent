@@ -43,8 +43,8 @@ public class AdapterAd extends RecyclerView.Adapter<AdapterAd.HolderAd> implemen
 
     public AdapterAd(Context context, ArrayList<ModelAd> adArrayList) {
         this.context = context;
-        this.adArrayList = adArrayList;
-        this.filterList = adArrayList;
+        this.adArrayList = adArrayList != null ? adArrayList : new ArrayList<>();
+        this.filterList = this.adArrayList;
         firebaseAuth = FirebaseAuth.getInstance();
     }
 
@@ -59,46 +59,62 @@ public class AdapterAd extends RecyclerView.Adapter<AdapterAd.HolderAd> implemen
     @Override
     public void onBindViewHolder(@NonNull HolderAd holder, int position) {
         ModelAd modelAd = adArrayList.get(position);
-        String title = modelAd.getTitle();
-        String description = modelAd.getDescription();
-        String address = modelAd.getAddress();
-        String condition = modelAd.getCondition();
-        String rent = modelAd.getRent();
-        String timestamp = modelAd.getTimestamp();
-        String formattedDate = Utils.formatTimestampDate(Long.valueOf(timestamp));
 
-        loadAdFirstImage(modelAd,holder);
+        // Check if modelAd is null to avoid NullPointerException
+        if (modelAd == null) {
+            Log.e(TAG, "onBindViewHolder: modelAd is null at position " + position);
+            holder.titleTv.setText("N/A");
+            holder.descriptionTv.setText("");
+            holder.addressTv.setText("");
+            holder.conditionTv.setText("");
+            holder.priceTv.setText("");
+            holder.dateTv.setText("");
+            holder.imageIv.setImageResource(R.drawable.ic_images_gray);
+            return;
+        }
+            String title = modelAd.getTitle();
+            String description = modelAd.getDescription();
+            String address = modelAd.getAddress();
+            String condition = modelAd.getCondition();
+            String rent = modelAd.getRent();
+            String timestamp = modelAd.getTimestamp();
 
-        if (firebaseAuth.getCurrentUser() != null){
-            checkIsFavorite(modelAd,holder);
+            String formattedDate = "N/A";
+            try {
+                formattedDate = Utils.formatTimestampDate(Long.parseLong(timestamp));
+            } catch (Exception e) {
+                Log.e(TAG, "Invalid timestamp: " + timestamp, e);
+            }
+
+            loadAdFirstImage(modelAd, holder);
+
+            if (firebaseAuth.getCurrentUser() != null) {
+                checkIsFavorite(modelAd, holder);
+            }
+
+            holder.titleTv.setText(title != null ? title : "N/A");
+            holder.descriptionTv.setText(description != null ? description : "");
+            holder.addressTv.setText(address != null ? address : "");
+            holder.conditionTv.setText(condition != null ? condition : "");
+            holder.priceTv.setText(rent != null ? rent : "");
+            holder.dateTv.setText(formattedDate);
+
+            holder.itemView.setOnClickListener(v -> {
+                Intent intent = new Intent(context, AdDetailsActivity.class);
+                intent.putExtra("adId", modelAd.getId());
+                context.startActivity(intent);
+            });
+
+            holder.favBtn.setOnClickListener(v -> {
+                boolean favorite = modelAd.isFavorite();
+                if (favorite) {
+                    Utils.removeFromFavorite(context, modelAd.getId());
+                } else {
+                    Utils.addToFavorite(context, modelAd.getId());
+                }
+            });
         }
 
-        holder.titleTv.setText(title);
-        holder.descriptionTv.setText(description);
-        holder.addressTv.setText(address);
-        holder.conditionTv.setText(condition);
-        holder.priceTv.setText(rent);
-        holder.dateTv.setText(formattedDate);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, AdDetailsActivity.class);
-                intent.putExtra("adId",modelAd.getId());
-                context.startActivity(intent);
-            }
-        });
-        holder.favBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean favorite = modelAd.isFavorite();
-                if (favorite){
-                    Utils.removeFromFavorite(context,modelAd.getId());
-                }else {
-                    Utils.addToFavorite(context,modelAd.getId());
-                }
-            }
-        });
-    }
 
     private void checkIsFavorite(ModelAd modelAd, HolderAd holder) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
@@ -155,7 +171,7 @@ public class AdapterAd extends RecyclerView.Adapter<AdapterAd.HolderAd> implemen
 
     @Override
     public int getItemCount() {
-        return adArrayList.size();
+        return adArrayList != null ? adArrayList.size() : 0;
     }
 
     @Override

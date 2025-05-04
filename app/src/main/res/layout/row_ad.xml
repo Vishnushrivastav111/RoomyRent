@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardUseCompatPadding="true"
     app:cardCornerRadius="10dp">
@@ -83,7 +83,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="2dp"
             android:layout_toEndOf="@+id/conditionTv"
-            android:text="@string/price_symbol"
+            android:text="Rs."
             android:textSize="12sp"/>
 
         <TextView

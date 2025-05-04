@@ -80,7 +80,7 @@ public class ProfileEditActivity extends AppCompatActivity {
                 validateData();
             }
         });
-        binding.phoneNumberEt.setOnClickListener(new View.OnClickListener() {
+       binding.phoneNumberEt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 binding.phoneNumberEt.setCursorVisible(true);
@@ -91,7 +91,7 @@ public class ProfileEditActivity extends AppCompatActivity {
     private String dob = "";
     private String email = "";
     private String phoneCode = "";
-    private String phoneNumber = "";
+    private String phoneNumber ="";
     private void validateData(){
         name= binding.nameEt.getText().toString().trim();
         dob= binding.dobEt.getText().toString().trim();
@@ -164,8 +164,8 @@ public class ProfileEditActivity extends AppCompatActivity {
 
         } else if (myUserType.equalsIgnoreCase("Email") || myUserType.equalsIgnoreCase("Google"))
          {
-             hashMap.put("phoneCode",phoneCode);
-             hashMap.put("phoneNumber",phoneNumber);
+             hashMap.put("phoneCode",""+phoneCode);
+             hashMap.put("phoneNumber",""+phoneNumber);
         }
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
         reference.child(firebaseAuth.getUid())
@@ -212,15 +212,15 @@ public class ProfileEditActivity extends AppCompatActivity {
                             binding.emailTil.setEnabled(false);
                             binding.emailEt.setEnabled(false);
                         }
-                        else {
+                       /* else {
                             binding.phoneNumberTil.setEnabled(false);
                             binding.phoneNumberEt.setEnabled(false);
                             binding.countryCodePicker.setEnabled(false);
-                        }
+                        }*/
                         binding.emailEt.setText(email);
                         binding.dobEt.setText(dob);
                         binding.nameEt.setText(name);
-                        binding.phoneNumberEt.setText(phoneNumber);
+                        binding.phoneNumberEt.setText(phone);
                         try {
                             int phoneCodeInt = Integer.parseInt(phoneCode.replace("+",""));
                             binding.countryCodePicker.setCountryForPhoneCode(phoneCodeInt);

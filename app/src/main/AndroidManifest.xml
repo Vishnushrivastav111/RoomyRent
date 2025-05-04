@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".OtpVerificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.AdDetailsActivity"
             android:exported="false" />
         <activity

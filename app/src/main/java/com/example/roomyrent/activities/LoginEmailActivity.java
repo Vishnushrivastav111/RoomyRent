@@ -60,11 +60,18 @@ public class LoginEmailActivity extends AppCompatActivity {
 
         firebaseAuth.signInWithEmailAndPassword(email,password)
                 .addOnSuccessListener(authResult -> {
-                    Log.d(TAG,"onSuccess: Logged In...");
                     progressDialog.dismiss();
-
-                    startActivity(new Intent(LoginEmailActivity.this, MainActivity.class));
-                    finishAffinity();
+                    if (firebaseAuth.getCurrentUser() != null && firebaseAuth.getCurrentUser().isEmailVerified()) {
+                        // ✅ Email verified hai, login allow karo
+                        Log.d(TAG,"onSuccess: Email verified");
+                        startActivity(new Intent(LoginEmailActivity.this, MainActivity.class));
+                        finishAffinity();
+                    } else {
+                        // ❌ Email verify nahi hai
+                        Log.d(TAG,"onFailure: Email not verified");
+                        Utils.toast(LoginEmailActivity.this, "Please verify your email first.");
+                        firebaseAuth.signOut(); // logout karo
+                    }
                 })
                 .addOnFailureListener(e -> {
                     Log.e(TAG,"onFailure:",e);
@@ -72,4 +79,5 @@ public class LoginEmailActivity extends AppCompatActivity {
                     progressDialog.dismiss();
                 });
     }
+
 }

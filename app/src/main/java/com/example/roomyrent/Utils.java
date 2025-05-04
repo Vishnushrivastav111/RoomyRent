@@ -22,13 +22,16 @@ import java.util.Locale;
 public class Utils {
 
     public static String[] bathroom = {"Yes", "No", "Prefer not to say"};
-    public static final String[] categories = {"Family Room", "Hostel", "Student Room", "Hotel"};
+    public static final String[] categories = {"Family Room", "Hostel", "Student Room", "Hotel", "Shop Room", "PG Room", "Guest Room"};
     public static String[] kitchen = {"Yes", "No", "Prefer not to say"};
     public static final int[] categoryIcons = {
             R.drawable.ic_category_family,
             R.drawable.ic_category_hostel,
             R.drawable.baseline_school_24,
             R.drawable.ic_category_hotel,
+            R.drawable.ic_category_shop,
+            R.drawable.ic_category_pg,
+            R.drawable.ic_category_guest,
     };
     public static final String AD_STATUS_AVAILABLE = "AVAILABLE";
     public static final String AD_STATUS_SOLD = "SOLD";

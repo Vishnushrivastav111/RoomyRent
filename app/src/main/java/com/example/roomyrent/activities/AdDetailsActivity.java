@@ -200,6 +200,12 @@ public class AdDetailsActivity extends AppCompatActivity {
                             String rent = modelAd.getRent();
                             String house = modelAd.getHouse();
                             String floor = modelAd.getFloor();
+                            String kitchen = modelAd.getKitchen();
+                            String size = modelAd.getSize();
+                            String bathroom = modelAd.getBathroom();
+                            String wifi = modelAd.getWifi();
+                            String furniture = modelAd.getFurniture();
+                            String lightBill = modelAd.getLight();
                             adLatitude = Double.parseDouble(modelAd.getLatitude());
                             adLongitude = Double.parseDouble(modelAd.getLongitude());
                             long timestamp = Long.parseLong(modelAd.getTimestamp());
@@ -231,6 +237,12 @@ public class AdDetailsActivity extends AppCompatActivity {
                             binding.dateTv.setText(formattedDate);
                             binding.houseTv.setText(house);
                             binding.floorTv.setText(floor);
+                            binding.kitchenTv.setText(kitchen);
+                            binding.sizeTv.setText(size);
+                            binding.bathroomTv.setText(bathroom);
+                            binding.wifiTv.setText(wifi);
+                            binding.furnitureTv.setText(furniture);
+                            binding.lightBillTv.setText(lightBill);
 
                             loadSellerDetails();
                         }catch (Exception e){
@@ -256,9 +268,11 @@ public class AdDetailsActivity extends AppCompatActivity {
                         String phoneNumber = ""+ snapshot.child("phoneNumber").getValue();
                         String name = ""+ snapshot.child("name").getValue();
                         String profileImageUrl = ""+ snapshot.child("profileImageUrl").getValue();
-                        Object timestampObj = snapshot.child("timestamp").getValue();
-                        long timestamp = timestampObj != null?(Long) timestampObj:0;
-                        String formattedDate = Utils.formatTimestampDate(timestamp);
+                        String timestamp=""+ snapshot.child("timestamp").getValue();
+                        if (timestamp.equals("null")){
+                            timestamp="0";
+                        }
+                        String formattedDate = Utils.formatTimestampDate(Long.parseLong(timestamp));
                         sellerPhone = phoneCode+phoneNumber;
 
                         binding.sellerNameTv.setText(name);
