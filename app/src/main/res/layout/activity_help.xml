@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.HelpActivity">
+ <TextView
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:text="🔐 Login Options (LoginOptionsActivity)
+Step 1: Activity Setup
+UI contains buttons to choose:
+
+Login via Email
+
+Login via Phone
+
+Login via Google
+
+Clicking a button navigates to the respective login activity.
+
+📧 Email Login (LoginEmailActivity)
+Step 2: Input Validation
+User enters Email and Password.
+
+App checks:
+
+If email format is valid using Patterns.EMAIL_ADDRESS
+
+If password is not empty
+
+Step 3: Firebase Authentication
+Uses firebaseAuth.signInWithEmailAndPassword(email, password)
+
+If login is successful:
+
+App checks isEmailVerified():
+
+✅ If yes → Navigate to MainActivity
+
+❌ If no → Show Please verify your email and sign out user
+
+If login fails → Show error message
+
+📱 Phone Login (LoginPhoneActivity)
+Step 4: Input Validation
+User enters a valid phone number with country code.
+
+Step 5: Send OTP (Firebase PhoneAuthProvider)
+App sends an OTP using Firebase PhoneAuthProvider.verifyPhoneNumber()
+
+OTP sent → Switch to OTP input UI
+
+User enters the OTP code
+
+Step 6: OTP Verification
+App creates a PhoneAuthCredential with OTP + verification ID
+
+Calls signInWithCredential()
+
+If user is new → Save user info to Firebase Database
+
+If user is existing → Navigate to MainActivity
+
+🧠 Google Sign-In (LoginOptionsActivity)
+Step 7: Google Sign-In Setup
+Configures Google Sign-In options (GoogleSignInOptions)
+
+Starts Google sign-in intent with startActivityForResult()
+
+Step 8: Handle Result
+In onActivityResult():
+
+Retrieves Google account using GoogleSignIn.getSignedInAccountFromIntent()
+
+Gets ID Token
+
+Step 9: Firebase Auth With Google
+Uses GoogleAuthProvider.getCredential(idToken, null)
+
+Calls firebaseAuth.signInWithCredential()
+
+If user is new → Save user info to Firebase Database
+
+If user is existing → Navigate to MainActivity
+
+"/>
+</RelativeLayout>

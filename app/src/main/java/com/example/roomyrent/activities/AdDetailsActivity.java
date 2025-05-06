@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -355,6 +356,8 @@ public class AdDetailsActivity extends AppCompatActivity {
                     public void onSuccess(Void unused) {
                         Log.d(TAG,"onSuccess: Deleted: ");
                         Utils.toast(AdDetailsActivity.this,"Deleted");
+                        Intent intent = new Intent(AdDetailsActivity.this,MainActivity.class);
+                        startActivity(intent);
                         finishAffinity();
                     }
                 })

@@ -211,29 +211,33 @@ public class AdCreateActivity extends AppCompatActivity {
         cameraActivityResultLauncher.launch(intent);
 
     }
-    private final ActivityResultLauncher<Intent>galleryActivityResultLauncher = registerForActivityResult(
+    private final ActivityResultLauncher<Intent> galleryActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
                 @Override
                 public void onActivityResult(ActivityResult o) {
-                    Log.d(TAG,"onActivityResult: ");
-                    if (o.getResultCode()== Activity.RESULT_OK){
+                    Log.d(TAG, "onActivityResult: ");
+                    if (o.getResultCode() == Activity.RESULT_OK) {
                         Intent data = o.getData();
+                        if (data != null) {
+                            Uri selectedImageUri = data.getData(); // ✅ FIXED
+                            Log.d(TAG, "onActivityResult: selectedImageUri: " + selectedImageUri);
 
-                        Log.d(TAG,"onActivityResult: imageUri: "+imageUri);
+                            String timestamp = "" + Utils.getTimestamp();
+                            ModelImagePicked modelImagePicked = new ModelImagePicked(timestamp, selectedImageUri, null, false);
+                            imagePickedArrayList.add(modelImagePicked);
 
-                        String timestamp = ""+Utils.getTimestamp();
-
-                        ModelImagePicked modelImagePicked = new ModelImagePicked(timestamp,imageUri,null,false);
-                        imagePickedArrayList.add(modelImagePicked);
-
-                        loadImages();
-                    }else {
-                        Utils.toast(AdCreateActivity.this,"Cancelled");
+                            loadImages();
+                        } else {
+                            Utils.toast(AdCreateActivity.this, "Image data is null");
+                        }
+                    } else {
+                        Utils.toast(AdCreateActivity.this, "Cancelled");
                     }
                 }
             }
     );
+
     private final ActivityResultLauncher<Intent>cameraActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
@@ -371,7 +375,9 @@ private void postAd(){
                 @Override
                 public void onSuccess(Void unused) {
                     Log.d(TAG,"onSuccess: Ad Published");
+                    progressDialog.setTitle("Successfully Uploaded");
                     uploadImagesStorage(keyId);
+                    progressDialog.dismiss();
                 }
             })
             .addOnFailureListener(new OnFailureListener() {
@@ -425,6 +431,9 @@ private void uploadImagesStorage(String keyId){
                                         .updateChildren(hashMap);
                             }
                             progressDialog.dismiss();
+                            Utils.toast(AdCreateActivity.this,"Added Successfully");
+                            Intent intent = new Intent(AdCreateActivity.this,MainActivity.class);
+                            startActivity(intent);
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

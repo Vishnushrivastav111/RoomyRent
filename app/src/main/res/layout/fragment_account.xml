@@ -211,7 +211,26 @@
                        android:drawableEnd="@drawable/ic_next_gray"
                        android:drawableStart="@drawable/ic_lock_gray"/>
                </com.google.android.material.card.MaterialCardView>
+               <com.google.android.material.card.MaterialCardView
+                   android:id="@+id/helpCv"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="2dp"
+                   android:clickable="true"
+                   android:focusable="true"
+                   android:foreground="?selectableItemBackground"
+                   app:cardCornerRadius="10dp"
+                   app:contentPadding="10dp">
 
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="36dp"
+                   android:gravity="center_vertical"
+                   android:text=" Help and Support"
+                   android:drawablePadding="10dp"
+                   android:drawableEnd="@drawable/ic_next_gray"
+                   android:drawableStart="@drawable/ic_help_gray"/>
+               </com.google.android.material.card.MaterialCardView>
                <com.google.android.material.card.MaterialCardView
                    android:id="@+id/verifyAccountCv"
                    android:layout_width="match_parent"

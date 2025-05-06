@@ -18,6 +18,7 @@ import com.example.roomyrent.R;
 import com.example.roomyrent.Utils;
 import com.example.roomyrent.activities.ChangePasswordActivity;
 import com.example.roomyrent.activities.DeleteAccountActivity;
+import com.example.roomyrent.activities.HelpActivity;
 import com.example.roomyrent.activities.MainActivity;
 import com.example.roomyrent.activities.ProfileEditActivity;
 import com.example.roomyrent.databinding.FragmentAccountBinding;
@@ -81,6 +82,12 @@ public class AccountFragment extends Fragment {
             public void onClick(View v) {
                 startActivity(new Intent(mContext, ChangePasswordActivity.class));
 
+            }
+        });
+        binding.helpCv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                helpAndSupport();
             }
         });
         binding.verifyAccountCv.setOnClickListener(new View.OnClickListener() {
@@ -154,6 +161,11 @@ public class AccountFragment extends Fragment {
 
                     }
                 });
+    }
+    public void helpAndSupport(){
+        Log.d(TAG,"help And Support");
+        Intent intent = new Intent(mContext, HelpActivity.class);
+        startActivity(intent);
     }
     public void verifyAccount(){
         Log.d(TAG,"verifyAccount");
